@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #cfd5e3;
+  --surface: #111827;
+  --text: #f9fafb;
+  --muted: #9ca3af;
+  --green: #16a34a;
+  --red: #d43636;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  background-color: white;
+  padding-bottom: 20px;
+}
+
+/* Header */
+header {
+  width: 100%;
+  padding: 20px;
+  background-color: var(--green);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+header h1 {
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 600;
+  flex: 1;
+  text-align: center;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  position: absolute;
+  right: 20px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text);
+  display: block;
+  border-radius: 2px;
+}
+
+/* Container */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Main Content Section */
+.main-content {
+  margin-top: 10vh;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.image-placeholder {
+  width: 140px;
+  height: 140px;
+  /* background-color: var(--muted); */
+  border-radius: 15px;
+  flex-shrink: 0;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.text-content p {
+  color: var(--surface);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin-bottom: 40px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  color: var(--surface);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+}
+
+.faq-header {
+  background-color: var(--red);
+  color: var(--text);
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: border-radius 0.3s;
+}
+
+.faq-item.active .faq-header {
+  border-radius: 8px 8px 0 0;
+}
+
+.faq-question {
+  flex: 1;
+}
+
+.faq-arrow {
+  font-size: 0.8rem;
+  transition: transform 0.3s;
+  margin-left: 10px;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  background-color: #f3f4f6;
+  border-radius: 0 0 8px 8px;
+  padding: 0 15px;
+  display: block;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 15px;
+}
+
+.faq-answer p {
+  color: var(--surface);
+  line-height: 1.6;
+  font-size: 0.9rem;
+  margin: 0;
+  display: block;
+}
+
+/* Countdown Section */
+.countdown-section {
+  margin-bottom: 40px;
+}
+
+.countdown-section h2 {
+  text-align: center;
+  color: var(--surface);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.countdown-box {
+  background-color: var(--green);
+  color: var(--text);
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.countdown-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.countdown-label {
+  font-size: 0.8rem;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+/* Video Section */
+.video-section {
+  margin-bottom: 20px;
+}
+
+.video-player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--surface);
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-button {
+  font-size: 3rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.scroll-top {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--text);
+  color: var(--surface);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top:hover {
+  background-color: var(--muted);
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    height: 200px;
+  }
+
+  .countdown-container {
+    flex-wrap: wrap;
+  }
+
+  .countdown-box {
+    flex: 1;
+    min-width: 70px;
+  }
+}
