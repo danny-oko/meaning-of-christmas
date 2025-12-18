@@ -120,7 +120,7 @@ header h1 {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  transition: border-radius 0.3s;
+  transition: border-radius 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .faq-item.active .faq-header {
@@ -133,25 +133,34 @@ header h1 {
 
 .faq-arrow {
   font-size: 0.8rem;
-  transition: transform 0.3s;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   margin-left: 10px;
+  display: inline-block;
 }
 
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: #f3f4f6;
   border-radius: 0 0 8px 8px;
   padding: 0 15px;
   display: block;
   box-sizing: border-box;
   margin-top: 0;
+  opacity: 0;
+  will-change: max-height, padding, opacity;
 }
 
 .faq-item.active .faq-answer {
   max-height: 500px;
   padding: 15px;
+  opacity: 1;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .faq-answer p {
